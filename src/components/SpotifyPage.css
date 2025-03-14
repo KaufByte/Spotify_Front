@@ -1,0 +1,138 @@
+/* main-page.css */
+
+/* --- Общие стили для главной страницы --- */
+.main-page {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-page .app-container {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  width: 100%;
+  max-width: 75rem; /* 1200px -> 75rem */
+  margin: 0 auto;
+}
+
+/* --- Контейнер исполнителей (аналогичен альбомам) --- */
+.popular-artists-container {
+  background-color: #121212;
+  padding: 1.25rem;
+  width: 51.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto 0 auto; /* 🔥 Отступ сверху для исполнителей */
+}
+
+/* Сетка исполнителей (аналогично альбомам) */
+.popular-artists-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem; /* 4px */
+  justify-content: center;
+}
+
+/* Заголовок "Популярные исполнители" */
+.popular-artists-header {
+  width: 100%;
+  text-align: left;
+  font-size: 1.9375rem; /* 31px */
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1.875rem; /* 30px */
+}
+
+/* Карточка исполнителя (аналогично альбому) */
+.popular-artist-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 0.5rem; /* 8px */
+  width: 11.25rem; /* 180px */
+  padding: 0.875rem; /* 14px */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); /* 4px 8px */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.popular-artist-card:hover {
+  background-color: #282828;
+}
+
+/* Фото исполнителя (аналогично обложке альбома) */
+.popular-artist-image {
+  width: 100%;
+  height: 11.25rem; /* 180px */
+  object-fit: cover;
+  border-radius: 0.25rem; /* 4px */
+  margin-bottom: 0.625rem; /* 10px */
+}
+
+/* Имя исполнителя */
+.popular-artist-name {
+  font-size: 0.9375rem; /* 15px */
+  color: #fff;
+  margin: 0;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Количество слушателей */
+.popular-artist-listeners {
+  font-size: 0.8125rem; /* 13px */
+  color: #b3b3b3;
+  margin: 0.3125rem 0 0; /* 5px */
+  text-align: left;
+}
+
+/* --- ✅ Адаптация для 100% (1dppx) --- */
+@media (resolution: 1dppx) {
+  .popular-artists-container {
+    width: 72rem; /* 1152px - ЕЩЁ ШИРЕ */
+    max-width: 100%;
+  }
+  .popular-artists-list {
+    grid-template-columns: repeat(6, 1fr); /* 6 колонок вместо 5 */
+  }
+}
+
+/* --- ✅ Адаптация для 125% (1.25dppx) --- */
+@media (resolution: 1.25dppx) {
+  .popular-artists-container {
+    width: 51.25rem; /* 820px */
+  }
+}
+
+/* --- Адаптация для экранов до 1024px --- */
+@media (max-width: 64rem) { /* 1024px */
+  .popular-artists-container {
+    width: 80%;
+    max-width: 37.5rem; /* 600px */
+    margin: 1.25rem auto; /* 20px */
+  }
+
+  .popular-artists-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Адаптация для экранов до 600px (мобильные) --- */
+@media (max-width: 37.5rem) { /* 600px */
+  .popular-artists-list {
+    grid-template-columns: 1fr;
+  }
+}
+

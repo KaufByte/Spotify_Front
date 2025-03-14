@@ -1,0 +1,392 @@
+.songs-container {
+  width: 100%;
+  background-color: #121212;
+  display: flex;
+  padding-top: 1.125rem; /* 18px -> 1.125rem */
+  flex: 1;
+  min-width: 16.875rem; /* 270px -> 16.875rem */
+  flex-direction: column;
+  border-radius: 0.5rem;
+  margin: 3.3rem auto 0 auto;
+  max-width: 60rem; 
+  max-height: 100vh;     
+  overflow-y: auto;     
+  padding-bottom: 4rem; 
+}
+
+/* 🔥 Увеличиваем ширину при 100% масштабе (1dppx) */
+@media (resolution: 1dppx) {
+  .songs-container {
+    max-width: 80rem; /* Шире контейнер для 100% */
+  }
+}
+
+/* Стилизация скроллбара для .songs-container */
+.songs-container::-webkit-scrollbar {
+  width: 0.5rem; 
+}
+.songs-container::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 1rem;
+}
+.songs-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.no-songs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh; /* Центрируем по высоте */
+}
+
+.no-songs {
+  font-size: 1.8rem; /* Увеличиваем размер */
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Новый фиолетово-синий градиент */
+  display: inline-block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 🔥 Красная «шапка» с информацией об артисте */
+.artist-banner-wrapper {
+  background: linear-gradient(to bottom, #d71a1a, #121212);
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.artist-banner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Фото артиста */
+.artist-image-container {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.3);
+}
+.artist-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Информация об артисте */
+/* 🔥 Контейнер с информацией об артисте */
+.artist-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  gap: 0.25rem; /* Уменьшаем расстояние между элементами */
+}
+
+/* 🔥 Контейнер с именем артиста и значком подтверждения */
+.artist-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Расстояние между именем и значком */
+}
+
+/* 🔥 Имя исполнителя */
+.artist-name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.artist-banner-wrapper .artist-name {
+  font-size: 5rem !important;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* 🔥 Иконка подтверждённого исполнителя */
+.verified-artist {
+  font-size: 0.875rem;
+  color: #1db954;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0; /* Убираем отступ снизу */
+}
+
+/* 🔥 Иконка синей галочки */
+.verified-badge {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* 🔥 Количество слушателей */
+.listeners-count {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 0.25rem; /* Уменьшаем отступ сверху */
+}
+
+/* Блок кнопок (Play, Подписка, …) */
+.artist-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.play-button {
+  background-color: #1db954;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.play-button:hover {
+  background-color: #19a34a;
+}
+.subscribe-button {
+  background: none;
+  border: 1px solid #fff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.subscribe-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.more-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  transition: background 0.2s ease;
+}
+.more-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 🔥 Заголовок "Популярные треки" */
+.popular-songs-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin: 0 2rem 1rem;
+}
+
+/* Список песен */
+.songs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0 2rem 2rem;
+}
+
+/* Строка песни */
+.song-row {
+  display: flex;
+  align-items: center;
+  background-color: #181818;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+.song-row:hover {
+  background-color: #282828;
+}
+
+/* Порядковый номер */
+.song-rank {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #b3b3b3;
+  margin-right: 1.25rem;
+  width: 2rem;
+  text-align: right;
+}
+
+/* Обложка трека */
+.song-cover {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+/* Основная информация о треке */
+.song-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.song-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+.song-artist {
+  font-size: 0.875rem;
+  color: #bbb;
+}
+
+/* Количество прослушиваний */
+.song-plays {
+  font-size: 1rem;
+  color: #b3b3b3;
+  width: 5rem;
+  text-align: right;
+  margin-right: 1.5rem;
+}
+
+/* Галочка (если трек особо популярен) */
+.song-check {
+  color: #1db954;
+  font-size: 1rem;
+  margin-right: 1.5rem;
+}
+
+/* Длительность трека */
+.song-duration {
+  font-size: 1rem;
+  color: #b3b3b3;
+  width: 3rem;
+  text-align: right;
+}
+
+
+@media (resolution: 1.25dppx) {
+  .songs-container {
+    max-width: 53rem !important; /* Контейнер чуть уже */
+  }
+
+  .artist-banner-wrapper .artist-image-container {
+    width: 12rem !important; /* Сделал изображение ещё меньше */
+    height: 12rem !important;
+  }
+
+  .artist-banner-wrapper .artist-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .artist-banner-wrapper .artist-name {
+    font-size: 3rem !important; /* Увеличил имя артиста */
+    font-weight: bold !important;
+    white-space: nowrap !important; /* Имя в одну строку */
+  }
+
+  .artist-banner-wrapper .verified-artist {
+    font-size: 0.9rem !important; /* Размер "Подтверждённый исполнитель" остался */
+  }
+  
+  .artist-banner-wrapper .listeners-count {
+    font-size: 1rem !important; /* Сделал текст слушателей больше */
+  }
+
+  .artist-banner-wrapper .play-button {
+    font-size: 0.9rem !important;
+    padding: 0.45rem 1.2rem !important;
+  }
+
+  .artist-banner-wrapper .subscribe-button {
+    font-size: 0.8rem !important;
+    padding: 0.45rem 1.2rem !important;
+  }
+
+  .artist-banner-wrapper .popular-songs-title {
+    font-size: 1.2rem !important; /* Заголовок "Популярные треки" чуть больше */
+  }
+
+  .artist-banner-wrapper .song-title {
+    font-size: 0.8rem !important;
+  }
+
+  .artist-banner-wrapper .song-rank,
+  .song-plays,
+  .song-duration {
+    font-size: 0.9rem !important;
+  }
+
+  .artist-banner-wrapper .song-cover {
+    width: 2.4rem !important; /* Обложка трека чуть больше */
+    height: 2.4rem !important;
+  }
+
+  .artist-banner-wrapper .song-row {
+    padding: 0.5rem 0.7rem !important; /* Чуть больше отступов */
+  }
+}
+
+
+
+/* 🔥 Адаптация для мобильных устройств */
+/* @media (max-width: 768px) {
+  .artist-banner-wrapper {
+    padding: 1rem;
+    text-align: center;
+  }
+  .artist-banner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .artist-actions {
+    justify-content: center;
+  }
+  .popular-songs-title {
+    margin: 1rem;
+  }
+  .songs-list {
+    padding: 0 1rem 1rem;
+  }
+  .song-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .song-rank,
+  .song-plays,
+  .song-check,
+  .song-duration {
+    margin-right: 0;
+    margin-top: 0.25rem;
+    text-align: left;
+    width: auto;
+  }
+  .song-cover {
+    margin-bottom: 0.5rem;
+  }
+} */

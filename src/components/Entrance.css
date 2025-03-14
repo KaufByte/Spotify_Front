@@ -1,0 +1,145 @@
+.signup-page{
+  background-color: #121212;
+  height: 100vh;
+  color: white;
+}
+
+
+.registration-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Dinamo Typefaces',sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group input {
+    width: 78%;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #121212;;
+    color: white;
+  }
+  
+  .btn-submit {
+    width: 80%;
+    padding: 17px;
+    background-color: #1ed760;
+    color: rgb(17, 17, 17);
+    border: none;
+    border-radius: 27px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size:16px;    
+    font-family: 'Dinamo Typefaces',sans-serif;
+    margin-bottom: 30px;
+  }
+  
+  .btn-submit:hover {
+    background-color: #3be477;
+  }
+  
+  .auth-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+  
+  .auth-options button {
+    width: 78%;
+    margin-bottom: 10px;
+    padding: 17px;
+    border-radius: 16px;
+    border: 1px solid var(--essential-subdued, #818181);
+    cursor: pointer;
+    font-weight: 700;
+    font-size:15px;    
+    font-family: 'Dinamo Typefaces',sans-serif;
+  }
+  
+  .btn-google {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .btn-facebook {
+    background-color: #121212;    
+    color: white;
+  }
+  
+  .btn-apple {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .login-text {
+    margin-top: 30px;
+    color: var(--text-subdued, #8d8989);
+    font-family: 'Dinamo Typefaces',sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  
+  .login-text a {
+    color: #ffffff;
+    font-family: 'Dinamo Typefaces',sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .Sign-up{
+        width: 85%;
+        justify-content: center;
+        margin: 0 auto;
+        display: flex;
+        justify-content:center;
+        padding-bottom: 5%;
+        font-size: 50px;
+  }
+
+  .auth-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 85%;
+  }
+  
+  .auth-separator::before,
+  .auth-separator::after {
+    content: '';
+    flex-grow: 1;
+    border-bottom: 1px solid #666;
+    margin: 0 10px;
+    
+  }
+  
+  .auth-separator span {
+    color: #fff; 
+    font-size: 14px;
+  }
+
+  .registration-container img{
+    width: 40px;
+    height: 40px;
+    margin-top: 50px; 
+  }
+
+  .thin-divider{
+    width:75%;
+    border-bottom: 1px solid #3d3b3b;
+    margin: auto;
+    
+  }
+
+  
