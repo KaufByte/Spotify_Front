@@ -52,7 +52,7 @@ const StyledTextField = styled("input")({
   padding: "14px",
   marginBottom: "15px",
   border: "1px solid #fff",
-  borderRadius: "6px",
+  borderRadius: "20px",
   backgroundColor: "#0f0f0e",
   color: "white",
   fontSize: "16px",

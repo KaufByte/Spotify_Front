@@ -177,7 +177,7 @@ export interface Song {
   album: number;   
   image: string;
   music_file_url: string;  
-  fullscreen_image: string;  // ✅ исправлено!
+  fullscreen_image: string; 
   duration: string;
   plays: string;
 }
@@ -209,12 +209,12 @@ const Songs: React.FC<SongsProps> = ({ onSelectSong, searchTerm, selectedArtist,
   const API_URL = import.meta.env.VITE_API_URL || 'https://spotify-update.onrender.com/api/';
 
 
-  // 🔥 Подключаемся к Django API (вместо json-server)
+
   useEffect(() => {
     const fetchSongs = async () => {
       try {
         console.log(`📡 Отправляем запрос к API: ${API_URL}songs/`);
-        const response = await fetch(`${API_URL}songs/`); // 👈 Используем динамический API_URL
+        const response = await fetch(`${API_URL}songs/`); 
 
         if (!response.ok) {
           throw new Error('Ошибка загрузки песен с сервера');
@@ -234,7 +234,7 @@ const Songs: React.FC<SongsProps> = ({ onSelectSong, searchTerm, selectedArtist,
     fetchSongs();
   }, []);
 
-  // 🔥 Фильтрация песен по артисту, альбому и поиску
+  
   useEffect(() => {
     console.log('🔄 Фильтрация песен...');
     console.log('📌 Исходные песни:', songs);
@@ -261,14 +261,12 @@ const Songs: React.FC<SongsProps> = ({ onSelectSong, searchTerm, selectedArtist,
 
   return (
     <div className="songs-container">
-      {/* 🔥 Показываем загрузку или ошибку */}
       {loading ? (
         <p className="loading-text">Загрузка песен...</p>
       ) : error ? (
         <p className="error-text">{error}</p>
       ) : (
         <>
-          {/* 🔥 Баннер альбома/исполнителя */}
           <div className="artist-banner-wrapper">
             {selectedAlbum ? (
               <div className="artist-banner">
@@ -295,10 +293,8 @@ const Songs: React.FC<SongsProps> = ({ onSelectSong, searchTerm, selectedArtist,
             ) : null}
           </div>
 
-          {/* 🔥 Заголовок "Популярные треки" */}
           <h2 className="popular-songs-title">Популярные треки</h2>
 
-          {/* 🔥 Список треков */}
           <div className="songs-list">
             {filteredSongs.length > 0 ? (
               filteredSongs.map((song, index) => {

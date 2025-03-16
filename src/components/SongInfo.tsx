@@ -15,8 +15,7 @@ const SongInfo: React.FC<SongInfoProps> = ({ song, artists }) => {
 
   return (
     <div className="song-info-container">
-      
-      {/* 🔥 Имя исполнителя сверху */}
+   
       <h2 className="song-artist-header">{currentArtist?.name ?? "Неизвестный исполнитель"}</h2>
 
       <div className="song-card">

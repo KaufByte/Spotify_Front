@@ -228,7 +228,7 @@ const SpotifyPage: React.FC = () => {
     
     if (songsByArtist.length === 0) {
         console.warn("⚠️ У исполнителя нет песен.");
-        setFilteredSongs([]); // ✅ Обновляем `filteredSongs`
+        setFilteredSongs([]); 
         setSelectedSong(null);
     } else {
         setFilteredSongs(songsByArtist);
@@ -273,7 +273,7 @@ const SpotifyPage: React.FC = () => {
 
   useEffect(() => {
     if (filteredSongs.length > 0) {
-        setSelectedSong(filteredSongs[0]); // ✅ Всегда выбираем первый трек
+        setSelectedSong(filteredSongs[0]); 
     } else {
         setSelectedSong(null);
     }
@@ -284,13 +284,11 @@ const SpotifyPage: React.FC = () => {
     <div className="main-page">
       <div className="app-container">
         <Layout setSearchTerm={setSearchTerm} /> 
-        
-        {/* 🔥 Колонка выбора исполнителей */}
+
         <div className="artists-container">
           <Artists artists={artists} onSelectArtist={handleSelectArtist} />
         </div>
 
-        {/* 🔥 Если выбран артист - показываем его песни, иначе альбомы */}
         {selectedArtist ? (
           <Songs
             onSelectSong={setSelectedSong}
@@ -328,8 +326,7 @@ const SpotifyPage: React.FC = () => {
             </div>
           </div>
         )}
-        
-        {/* 🔥 Блок информации о песне */}
+
         <div className="content">
           {selectedSong ? (
             <SongInfo song={selectedSong} artists={artists} />
@@ -337,8 +334,7 @@ const SpotifyPage: React.FC = () => {
             <SpotifyInfo />
           )}
         </div>
-        
-        {/* 🔥 Аудиоплеер */}
+
         {selectedSong && (
           <AudioPlayer 
             songSrc={selectedSong?.music_file_url || ""}
@@ -346,11 +342,11 @@ const SpotifyPage: React.FC = () => {
             songTitle={selectedSong?.title || ""}
             artistName={artists.find(a => a.id === selectedSong?.artist)?.name || ""}
             currentSongId={selectedSong?.id || null} 
-            fullscreen_image={selectedSong?.fullscreen_image || ""}  // ✅ исправлено!
+            fullscreen_image={selectedSong?.fullscreen_image || ""}  
             songs={filteredSongs.map(song => ({
                 id: song.id,
                 musicFile: song.music_file_url || "", 
-                fullscreen_image: song.fullscreen_image || "",  // ✅ исправлено!
+                fullscreen_image: song.fullscreen_image || "", 
             }))}
             onSongChange={handleSongChange}
         />

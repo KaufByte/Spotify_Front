@@ -237,7 +237,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
     };
   }, [songSrc]);
   useEffect(() => {
-    localStorage.setItem("isPlaying", String(isPlaying)); // ✅ Обновляем `isPlaying` в `localStorage`
+    localStorage.setItem("isPlaying", String(isPlaying)); 
   }, [isPlaying]);
   
 
@@ -257,7 +257,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
       />
 
 
-      {/* Информация о треке */}
+
       <div className="track-info">
         {songImage && <img src={songImage} className="track-image" alt="track" />}
         <div className="track-details">
@@ -266,7 +266,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
         </div>
       </div>
 
-      {/* Основные кнопки управления */}
+
       <div className="player-controls">
         <ShuffleIcon
           className={`icon ${isShuffling ? 'active' : 'inactive'}`}
@@ -287,7 +287,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
         />
       </div>
 
-      {/* Прогресс-бар */}
+
       <div className="progress-bar">
         <span>
           {Math.floor(currentTime / 60)}:
@@ -315,7 +315,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
             .padStart(2, '0')}
         </span>
 
-        {/* Кнопки справа */}
+
         <div className="right-controls">
           <VolumeUpIcon className="icon" />
           <input
@@ -330,7 +330,6 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
         </div>
       </div>
 
-      {/* Оверлей во весь экран */}
       {isFullscreen && fullscreen_image && fullscreen_image !== "" && (
           <div className="fullscreen-overlay">
             <img src={fullscreen_image} alt="fullscreen" className="fullscreen-image" />
