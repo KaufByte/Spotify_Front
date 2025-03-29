@@ -563,7 +563,7 @@ const Entrance: React.FC = () => {
                 placeholder="yyyy"
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
-                onBlur={validateDateOfBirth} // ✅ Проверка года
+                onBlur={validateDateOfBirth} 
                 min="1900"
                 max={new Date().getFullYear()}
                 disabled={isLoading}

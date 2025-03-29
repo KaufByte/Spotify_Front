@@ -105,8 +105,8 @@
 }
 
 .check-icon {
-  width: 1rem; /* 16px */
-  height: 1rem; /* 16px */
+  width: 1.5em; 
+  height: 1.5rem;
 }
 
 /* --- Блок «Об исполнителе» --- */
@@ -129,6 +129,7 @@
   background-position: center;
   border-radius: 0.5rem 0.5rem 0 0; /* 8px 8px 0 0 */
   overflow: hidden;
+  cursor: pointer;
 }
 
 .author-overlay {

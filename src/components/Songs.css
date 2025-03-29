@@ -354,39 +354,4 @@
 
 
 
-/* 🔥 Адаптация для мобильных устройств */
-/* @media (max-width: 768px) {
-  .artist-banner-wrapper {
-    padding: 1rem;
-    text-align: center;
-  }
-  .artist-banner {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .artist-actions {
-    justify-content: center;
-  }
-  .popular-songs-title {
-    margin: 1rem;
-  }
-  .songs-list {
-    padding: 0 1rem 1rem;
-  }
-  .song-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .song-rank,
-  .song-plays,
-  .song-check,
-  .song-duration {
-    margin-right: 0;
-    margin-top: 0.25rem;
-    text-align: left;
-    width: auto;
-  }
-  .song-cover {
-    margin-bottom: 0.5rem;
-  }
-} */
+

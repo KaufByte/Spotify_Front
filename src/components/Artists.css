@@ -79,6 +79,12 @@
     transition: background 0.2s ease;
 }
 
+.artists-tab.active {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
 /* --- Поле поиска --- */
 .artists-search {
     display: flex;
